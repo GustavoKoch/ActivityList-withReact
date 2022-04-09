@@ -1,23 +1,23 @@
 import React from 'react';
 import { useState } from 'react';
-import "./AddActivity.css";
+import "./AddActandInputChange.css";
 
-function AddActivity ()  {
+function AddActandInputChange ({addFunc})  {
     const [input, setInput] = useState(''); // '' is the initial state value
-    const handleClick = (event) => {
-      /* Insert component Activity */;
-      event.preventDefault();
-      
-      console.log(input);
+    
+    const handleClick = (event) => {    
+      event.preventDefault();            
+       addFunc(input);
+       setInput("");       
     };
 
     return (
       <form>
         <input placeholder="Add your activity here" type="text" name="inputField" value={input} onInput={e => setInput(e.target.value)}/>
-        <button onClick={handleClick}>Add</button>
+        <button onClick={(e)=>handleClick(e)}>➕</button>
       </form>  
       
     );
   };
   
-  export default AddActivity;
+  export default AddActandInputChange;
