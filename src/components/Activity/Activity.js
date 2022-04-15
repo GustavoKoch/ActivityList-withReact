@@ -1,17 +1,17 @@
 import React from "react";
 
-export default function Activity({onDeleteTask, key, id, desc, checkIfDone, taskIdBeingEdited }) {
+export default function Activity({ id, desc, checkIfDone, editing, onDeleteTask, toggleEditTask, toggleDone, editInput }) {
 
   return (
     <li>
-      <input name="text" type="text" value={desc} disabled={id === taskIdBeingEdited ? false : true} />
+      <input name={id} type="text" defaultValue={desc} disabled={!editing} onChange={editInput}/>
       
-      <button onClick={() => {}}>✏️</button>
+      <button onClick={() => toggleEditTask(id)}>{editing?"🔒":"✏️"}</button>
       <button onClick={() => onDeleteTask(id)}>🗑️</button>
       <input
         name="check"
         type="checkbox"
-        onChange={() => {}}
+        onChange={() => {toggleDone(id)}}
         checked={checkIfDone}
       />
     </li>
