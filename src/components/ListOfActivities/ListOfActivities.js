@@ -1,8 +1,8 @@
 import React from "react";
 import Activity from "../Activity/Activity.js";
 
-export default function ListOfActivities({ list, onDeleteTask, taskIdBeingEdited }) {
-  console.log(list);
+export default function ListOfActivities({ list, onDeleteTask, toggleEditTask, toggleDone, editInput }) {
+  /* console.log(list); */
   return (
     <ul>
       {list.map((activity, index) => {
@@ -12,8 +12,11 @@ export default function ListOfActivities({ list, onDeleteTask, taskIdBeingEdited
             id={activity.id}
             desc={activity.desc}
             checkIfDone={activity.checkIfDone}
+            editing={activity.editing}
             onDeleteTask={onDeleteTask}
-            taskIdBeingEdited={taskIdBeingEdited}
+            toggleEditTask={toggleEditTask}
+            toggleDone={toggleDone}
+            editInput={editInput}
           />
         );
       })}
