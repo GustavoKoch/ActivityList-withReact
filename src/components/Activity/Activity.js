@@ -3,7 +3,7 @@ import React from "react";
 export default function Activity({ id, desc, checkIfDone, editing, onDeleteTask, toggleEditTask, toggleDone, editInput }) {
 
   return (
-    <li>
+    <li key={id}>
       <input name={id} type="text" defaultValue={desc} disabled={!editing} onChange={editInput}/>
       
       <button onClick={() => toggleEditTask(id)}>{editing?"🔒":"✏️"}</button>

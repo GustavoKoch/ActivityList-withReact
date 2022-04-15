@@ -37,8 +37,7 @@ function App() {
   const toggleEditTask = (targetTaskId) => {   
     const list3=[...list];
     const taskBeingEdited = list3.find((x)=> x.id === targetTaskId);
-    taskBeingEdited.editing=!taskBeingEdited.editing;
-    console.log(list3);   
+    taskBeingEdited.editing=!taskBeingEdited.editing;   
     setList(list3);
   };
 
