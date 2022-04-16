@@ -14,6 +14,7 @@ export default function Activity({
   return (
     <li key={id}>
       <input
+        class="form-control"
         name="desc"
         type="text"
         defaultValue={desc}
@@ -22,7 +23,7 @@ export default function Activity({
       />
       <label htmlFor="toDos"></label>
       <select
-        ClassName="form-select form-select-md"
+        class="form-select form-select-md"
         aria-label=".form-select-md example"
         id="toDos"
         name="category"
@@ -43,12 +44,13 @@ export default function Activity({
         <option value="Others">🌈</option>
       </select>
 
-      <button name="editing" ClassName="btn btn-outline-secondary" onClick={(e) => onMixedChanges(e, id)}>
+      <button name="editing" class="btn btn-outline-secondary" onClick={(e) => onMixedChanges(e, id)}>
         {editing ? "🔓" : "🔒"}
       </button>
-      <button ClassName="btn btn-outline-secondary" onClick={(e) => onDeleteTask(e, id)}>🗑️</button>
-      <input
+      <button class="btn btn-outline-secondary" onClick={(e) => onDeleteTask(e, id)}>🗑️</button>
+      <button
         name="checkIfDone"
+        class="btn btn-outline-secondary"
         type="checkbox"
         onChange={(e) => {
           onMixedChanges(e, id);
