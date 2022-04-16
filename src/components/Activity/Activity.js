@@ -23,7 +23,7 @@ export default function Activity({ id, desc, cat, checkIfDone, editing, onDelete
     </select>
 
 
-      <button onClick={() => toggleEditTask(id)}>{editing?"🔒":"✏️"}</button>
+      <button onClick={() => toggleEditTask(id)}>{editing?"🔓":"🔒"}</button>
       <button onClick={() => onDeleteTask(id)}>🗑️</button>
       <input
         name="check"
