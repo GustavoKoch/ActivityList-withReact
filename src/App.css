@@ -20,6 +20,12 @@ ul {
 }
 
 li {
+    display: flex;
+    flex-direction: row;
     margin: 20px;
     list-style-type: none;
 } 
+
+li > .form-control {
+    min-width: 400px;
+}

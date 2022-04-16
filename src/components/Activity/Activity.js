@@ -4,10 +4,11 @@ export default function Activity({ id, desc, cat, checkIfDone, editing, onDelete
 
   return (
     <li key={id}>
-      <input name={id} type="text" defaultValue={desc} disabled={!editing} onChange={editInput}/>
+      <input name={id} class="form-control" type="text" defaultValue={desc} disabled={!editing} onChange={editInput}/>
       
     <label htmlFor="toDos"></label>
-    <select id="toDos" name={id} onChange={comboChange} value={cat}>
+    <select class="form-select form-select-md" aria-label=".form-select-md example" name={id} onChange={comboChange} value={cat}>
+      <option selected>Type</option>
       <option value="Urgent">🚨</option>
       <option value="Important">🔥</option> 
       <option value="Idea">💡</option>
@@ -20,17 +21,17 @@ export default function Activity({ id, desc, cat, checkIfDone, editing, onDelete
       <option value="Reminders">🧠</option>
       <option value="Idea">💡</option>      
       <option value="Others">🌈</option>
-    </select>
+  </select>
 
 
-      <button onClick={() => toggleEditTask(id)}>{editing?"🔓":"🔒"}</button>
-      <button onClick={() => onDeleteTask(id)}>🗑️</button>
-      <input
+      <button class="btn btn-outline-secondary" onClick={() => toggleEditTask(id)}>{editing?"🔓":"🔒"}</button>
+      <button class="btn btn-outline-secondary" onClick={() => onDeleteTask(id)}>🗑️</button>
+      <button
+        class="btn btn-outline-secondary"
         name="check"
-        type="checkbox"
-        onChange={() => {toggleDone(id)}}
+        onClick={() => {toggleDone(id)}}
         checked={checkIfDone}
-      />
+      >{checkIfDone?"✅":"⏳"}</button>
     </li>
   );
 }
