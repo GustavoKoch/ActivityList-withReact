@@ -52,11 +52,11 @@ export default function Activity({
         name="checkIfDone"
         class="btn btn-outline-secondary"
         type="checkbox"
-        onChange={(e) => {
+        onClick={(e) => {
           onMixedChanges(e, id);
         }}
         checked={checkIfDone}
-      >{checkIfDone?"✅":"⏳"}</button>
+      >{checkIfDone?"✅":"🚀"}</button>
     </li>
   );
 }
