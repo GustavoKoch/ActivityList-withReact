@@ -20,9 +20,10 @@ export default function Activity({
         disabled={!editing}
         onChange={(e) => onMixedChanges(e, id)}
       />
-
       <label htmlFor="toDos"></label>
       <select
+        ClassName="form-select form-select-md"
+        aria-label=".form-select-md example"
         id="toDos"
         name="category"
         onChange={(e) => onMixedChanges(e, id)}
@@ -42,10 +43,10 @@ export default function Activity({
         <option value="Others">🌈</option>
       </select>
 
-      <button name="editing" onClick={(e) => onMixedChanges(e, id)}>
+      <button name="editing" ClassName="btn btn-outline-secondary" onClick={(e) => onMixedChanges(e, id)}>
         {editing ? "🔓" : "🔒"}
       </button>
-      <button onClick={(e) => onDeleteTask(e, id)}>🗑️</button>
+      <button ClassName="btn btn-outline-secondary" onClick={(e) => onDeleteTask(e, id)}>🗑️</button>
       <input
         name="checkIfDone"
         type="checkbox"
@@ -53,7 +54,7 @@ export default function Activity({
           onMixedChanges(e, id);
         }}
         checked={checkIfDone}
-      />
+      >{checkIfDone?"✅":"⏳"}</button>
     </li>
   );
 }
