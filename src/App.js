@@ -34,7 +34,7 @@ function App() {
     setList(newList);
   };
 
-  const deleteTask = (targetTaskId) => {
+  const deleteTask = (e, targetTaskId) => {
     const filteredList = list.filter((x) => x.id !== targetTaskId);
     setList(filteredList);
   };
