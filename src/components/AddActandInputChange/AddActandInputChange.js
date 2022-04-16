@@ -15,9 +15,9 @@ function AddActandInputChange ({addFunc, handleCleanDones})  {
 
     return (
       <form>
-        <input placeholder="Add your activity here" type="text" name="inputField" value={input} onInput={e => setInput(e.target.value)}/>
-        <button onClick={(e)=>handleAdd(e)}>➕</button>
-        <button onClick={(e)=>handleCleanDones(e)}>🧹</button>
+        <input class="form-control" placeholder="Add your activity here" type="text" name="inputField" value={input} onInput={e => setInput(e.target.value)}/>
+        <button class="btn btn-outline-secondary" onClick={(e)=>handleAdd(e)}>➕</button>
+        <button class="btn btn-outline-secondary" onClick={(e)=>handleCleanDones(e)}>🧹</button>
       </form>  
       
     );

@@ -13,7 +13,7 @@ export default function Activity({ id, desc, cat, checkIfDone, editing, onDelete
       <option value="Important">🔥</option> 
       <option value="Idea">💡</option>
       <option value="House">🏠</option>
-      <option value="House">🍔</option>
+      <option value="Food">🍔</option>
       <option value="Shopping">🛒</option>
       <option value="Sport">⚽</option>
       <option value="Doctor">👨‍⚕️</option>
