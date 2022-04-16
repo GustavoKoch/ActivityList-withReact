@@ -4,5 +4,5 @@ form {
 }
 
 form > .form-control{
-    min-width: 400px;
+    width: 375px;
 } 

@@ -1,5 +1,6 @@
 import React from "react";
 import Activity from "../Activity/Activity.js";
+import "./ListOfActivities.css";
 
 export default function ListOfActivities({ list, onDeleteTask, onMixedChanges }) {
   /* console.log(list); */
