@@ -5,7 +5,7 @@ import ListOfActivities from "./components/ListOfActivities/ListOfActivities";
 
 function App() {
   const [list, setList] = useState([
-/* { id: 1, desc: "This is your first Activity", checkIfDone:false , editing:false}  */
+/* { id: 1, desc: "This is your first Activity", checkIfDone:false , editing:false, category:"I" }  */
   ]);
 
   
@@ -19,7 +19,6 @@ function App() {
   useEffect( ()=>{    
     localStorage.setItem(KEY, JSON.stringify(list)) }
     ,[list] );
-
 
 
 
@@ -53,21 +52,36 @@ function App() {
     setList(list2);
   };
 
- const editInput =(e)=>{ 
-   const list4=[...list];
-   const actInputBeingChanged = list4.find((x)=> x.id == e.target.name);  
-   actInputBeingChanged.desc=e.target.value;
-   setList(list4);
+  const editInput =(e)=>{ 
+    const list4=[...list];
+    const actInputBeingChanged = list4.find((x)=> x.id == e.target.name);  
+    actInputBeingChanged.desc=e.target.value;
+    setList(list4);
  }
 
+  const comboChange=(e)=>{
+    const list5=[...list];
+    const actChanged = list5.find((x)=> x.id == e.target.name);  
+    actChanged.category=e.target.value;  
+    setList(list5);
+ }
+
+ const handleCleanDones =()=>{
+  const filteredListNotDone = list.filter((x)=> x.checkIfDone === false)
+  setList(filteredListNotDone);
+ }
+
+const numAct=list.length;
+const numDone = list.filter((x)=> x.checkIfDone === true).length;
 
 
   return (
     <div className="App">
       <h2>Your activity list: </h2>
-      <AddActandInputChange addFunc={handleAdd} />
-      <ListOfActivities list={list} onDeleteTask={deleteTask} toggleEditTask={toggleEditTask} toggleDone={toggleDone} editInput={editInput}/>
-      <h4>{list.length<1?"You don´t have activities yet!":""}</h4>
+      <AddActandInputChange addFunc={handleAdd} handleCleanDones={handleCleanDones}/>
+      <ListOfActivities list={list} onDeleteTask={deleteTask} toggleEditTask={toggleEditTask} toggleDone={toggleDone} editInput={editInput} comboChange={comboChange}/>
+      <h4>{numAct<1?"You don´t have activities yet!":"You have " +numAct+ " activities listed."}</h4>   
+      <h4>{numAct>0 &&  "Only " +numDone+  " are done!"}</h4>   
     </div>
   );
 }
