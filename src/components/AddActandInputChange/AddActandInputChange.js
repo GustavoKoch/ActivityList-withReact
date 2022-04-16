@@ -14,7 +14,7 @@ function AddActandInputChange ({addFunc})  {
     return (
       <form>
         <input placeholder="Add your activity here" type="text" name="inputField" value={input} onInput={e => setInput(e.target.value)}/>
-        <button onClick={(e)=>handleClick(e)}>➕</button>
+        <button onClick={(e)=>handleClick(e)} >➕</button>
       </form>  
       
     );
