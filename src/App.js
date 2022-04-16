@@ -81,7 +81,7 @@ const numDone = list.filter((x)=> x.checkIfDone === true).length;
       <AddActandInputChange addFunc={handleAdd} handleCleanDones={handleCleanDones}/>
       <ListOfActivities list={list} onDeleteTask={deleteTask} toggleEditTask={toggleEditTask} toggleDone={toggleDone} editInput={editInput} comboChange={comboChange}/>
       <h4>{numAct<1?"You don´t have activities yet!":"You have " +numAct+ " activities listed."}</h4>   
-      <h4>{"Only " +numDone+  " are done!"}</h4>   
+      <h4>{numAct>0 &&  "Only " +numDone+  " are done!"}</h4>   
     </div>
   );
 }
