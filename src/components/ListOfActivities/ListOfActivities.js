@@ -1,7 +1,7 @@
 import React from "react";
 import Activity from "../Activity/Activity.js";
 
-export default function ListOfActivities({ list, onDeleteTask, toggleEditTask, toggleDone, editInput, comboChange }) {
+export default function ListOfActivities({ list, onDeleteTask, onMixedChanges }) {
   /* console.log(list); */
   return (
     <ul>
@@ -15,10 +15,7 @@ export default function ListOfActivities({ list, onDeleteTask, toggleEditTask, t
             checkIfDone={activity.checkIfDone}
             editing={activity.editing}
             onDeleteTask={onDeleteTask}
-            toggleEditTask={toggleEditTask}
-            toggleDone={toggleDone}
-            editInput={editInput}
-            comboChange={comboChange}
+            onMixedChanges={onMixedChanges}
           />
         );
       })}
